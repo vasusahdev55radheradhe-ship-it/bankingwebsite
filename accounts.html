@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts - BankName</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40">
+                        <polygon points="20,5 35,15 35,25 20,35 5,25 5,15" fill="white"/>
+                    </svg>
+                    <span>BankName</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="dashboard.html" class="menu-item" data-page="dashboard">
+                    <span class="menu-icon">🏠</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="accounts.html" class="menu-item active" data-page="accounts">
+                    <span class="menu-icon">👤</span>
+                    <span>Accounts</span>
+                </a>
+                <a href="transactions.html" class="menu-item" data-page="transactions">
+                    <span class="menu-icon">✓</span>
+                    <span>Transactions</span>
+                </a>
+                <a href="transfer.html" class="menu-item" data-page="transfer">
+                    <span class="menu-icon">→</span>
+                    <span>Transfer Money</span>
+                </a>
+                <a href="cards.html" class="menu-item" data-page="cards">
+                    <span class="menu-icon">💳</span>
+                    <span>Cards</span>
+                </a>
+                <a href="loans.html" class="menu-item" data-page="loans">
+                    <span class="menu-icon">📋</span>
+                    <span>Loans</span>
+                </a>
+                <a href="profile.html" class="menu-item" data-page="profile">
+                    <span class="menu-icon">👥</span>
+                    <span>Profile</span>
+                </a>
+                <a href="support.html" class="menu-item" data-page="support">
+                    <span class="menu-icon">❓</span>
+                    <span>Support</span>
+                </a>
+                <a href="#" class="menu-item" onclick="handleLogout()">
+                    <span class="menu-icon">🚪</span>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>My Accounts</h1>
+                </div>
+                <div class="header-right">
+                    <div class="header-icons">
+                        <button class="icon-btn" title="Notifications">🔔</button>
+                        <button class="icon-btn" title="Messages">✓</button>
+                        <button class="icon-btn" title="Settings">⚙️</button>
+                        <button class="icon-btn" title="Calendar">📅</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Accounts Content -->
+            <div class="content-wrapper">
+                <!-- Accounts List -->
+                <section class="accounts-detailed">
+                    <div class="account-detailed-card">
+                        <div class="account-card-header">
+                            <h3>Savings Account</h3>
+                            <span class="account-number">Account Number: 1234567890</span>
+                        </div>
+                        <div class="account-card-content">
+                            <div class="account-info-row">
+                                <span class="label">Total Balance:</span>
+                                <span class="value">$12,850.75</span>
+                            </div>
+                            <div class="account-info-row">
+                                <span class="label">Account Type:</span>
+                                <span class="value">Savings Account</span>
+                            </div>
+                            <div class="account-info-row">
+                                <span class="label">Interest Rate:</span>
+                                <span class="value">3.5% p.a.</span>
+                            </div>
+                            <div class="account-info-row">
+                                <span class="label">Status:</span>
+                                <span class="value status-active">✓ Active</span>
+                            </div>
+                        </div>
+                        <div class="account-card-actions">
+                            <button class="btn-secondary" onclick="handleViewTransactions()">View Transactions</button>
+                            <button class="btn-secondary" onclick="handleDownloadStatement()">Download Statement</button>
+                            <button class="btn-secondary" onclick="handleAccountSettings()">Account Settings</button>
+                        </div>
+                    </div>
+
+                    <div class="account-detailed-card">
+                        <div class="account-card-header">
+                            <h3>Current Account</h3>
+                            <span class="account-number">Account Number: 0987654321</span>
+                        </div>
+                        <div class="account-card-content">
+                            <div class="account-info-row">
+                                <span class="label">Total Balance:</span>
+                                <span class="value">$8,420.50</span>
+                            </div>
+                            <div class="account-info-row">
+                                <span class="label">Account Type:</span>
+                                <span class="value">Current Account</span>
+                            </div>
+                            <div class="account-info-row">
+                                <span class="label">Interest Rate:</span>
+                                <span class="value">0.5% p.a.</span>
+                            </div>
+                            <div class="account-info-row">
+                                <span class="label">Status:</span>
+                                <span class="value status-active">✓ Active</span>
+                            </div>
+                        </div>
+                        <div class="account-card-actions">
+                            <button class="btn-secondary" onclick="handleViewTransactions()">View Transactions</button>
+                            <button class="btn-secondary" onclick="handleDownloadStatement()">Download Statement</button>
+                            <button class="btn-secondary" onclick="handleAccountSettings()">Account Settings</button>
+                        </div>
+                    </div>
+
+                    <div class="account-detailed-card">
+                        <div class="account-card-header">
+                            <h3>Investment Account</h3>
+                            <span class="account-number">Account Number: 1122334455</span>
+                        </div>
+                        <div class="account-card-content">
+                            <div class="account-info-row">
+                                <span class="label">Total Balance:</span>
+                                <span class="value">$25,300.00</span>
+                            </div>
+                            <div class="account-info-row">
+                                <span class="label">Account Type:</span>
+                                <span class="value">Investment Account</span>
+                            </div>
+                            <div class="account-info-row">
+                                <span class="label">Interest Rate:</span>
+                                <span class="value">5.2% p.a.</span>
+                            </div>
+                            <div class="account-info-row">
+                                <span class="label">Status:</span>
+                                <span class="value status-active">✓ Active</span>
+                            </div>
+                        </div>
+                        <div class="account-card-actions">
+                            <button class="btn-secondary" onclick="handleViewTransactions()">View Transactions</button>
+                            <button class="btn-secondary" onclick="handleDownloadStatement()">Download Statement</button>
+                            <button class="btn-secondary" onclick="handleAccountSettings()">Account Settings</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Add New Account Section -->
+                <section class="add-account-section">
+                    <h3>Want to add a new account?</h3>
+                    <button class="btn-primary" onclick="handleAddNewAccount()">+ Open New Account</button>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

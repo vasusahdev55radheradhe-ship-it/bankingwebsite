@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - BankName</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40">
+                        <polygon points="20,5 35,15 35,25 20,35 5,25 5,15" fill="white"/>
+                    </svg>
+                    <span>BankName</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="dashboard.html" class="menu-item" data-page="dashboard">
+                    <span class="menu-icon">🏠</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="accounts.html" class="menu-item" data-page="accounts">
+                    <span class="menu-icon">👤</span>
+                    <span>Accounts</span>
+                </a>
+                <a href="transactions.html" class="menu-item" data-page="transactions">
+                    <span class="menu-icon">✓</span>
+                    <span>Transactions</span>
+                </a>
+                <a href="transfer.html" class="menu-item" data-page="transfer">
+                    <span class="menu-icon">→</span>
+                    <span>Transfer Money</span>
+                </a>
+                <a href="cards.html" class="menu-item" data-page="cards">
+                    <span class="menu-icon">💳</span>
+                    <span>Cards</span>
+                </a>
+                <a href="loans.html" class="menu-item" data-page="loans">
+                    <span class="menu-icon">📋</span>
+                    <span>Loans</span>
+                </a>
+                <a href="profile.html" class="menu-item" data-page="profile">
+                    <span class="menu-icon">👥</span>
+                    <span>Profile</span>
+                </a>
+                <a href="support.html" class="menu-item active" data-page="support">
+                    <span class="menu-icon">❓</span>
+                    <span>Support</span>
+                </a>
+                <a href="#" class="menu-item" onclick="handleLogout()">
+                    <span class="menu-icon">🚪</span>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Support & Help</h1>
+                </div>
+                <div class="header-right">
+                    <div class="header-icons">
+                        <button class="icon-btn" title="Notifications">🔔</button>
+                        <button class="icon-btn" title="Messages">✓</button>
+                        <button class="icon-btn" title="Settings">⚙️</button>
+                        <button class="icon-btn" title="Calendar">📅</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Support Content -->
+            <div class="content-wrapper">
+                <!-- Quick Support Options -->
+                <section class="support-options">
+                    <div class="option-card" onclick="handleStartChat()">
+                        <span class="option-icon">💬</span>
+                        <h4>Live Chat</h4>
+                        <p>Chat with our support team</p>
+                    </div>
+                    <div class="option-card" onclick="handleCallSupport()">
+                        <span class="option-icon">📞</span>
+                        <h4>Call Support</h4>
+                        <p>1-800-BANK-NOW</p>
+                    </div>
+                    <div class="option-card" onclick="handleEmailSupport()">
+                        <span class="option-icon">📧</span>
+                        <h4>Email Support</h4>
+                        <p>support@bankname.com</p>
+                    </div>
+                    <div class="option-card" onclick="handleTicketStatus()">
+                        <span class="option-icon">🎫</span>
+                        <h4>Ticket Status</h4>
+                        <p>Check your support tickets</p>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How do I change my password?</span>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>You can change your password from the Profile & Settings page. Go to the Security tab and click on "Change Password". Enter your current password and your new password twice, then click Update.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What is the transfer limit?</span>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The default daily transfer limit is $10,000. You can modify this limit from your Profile & Settings. International transfers may have different limits based on regulatory requirements.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How do I download my bank statements?</span>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>You can download statements from the Accounts page. Click on an account and select "Download Statement". Choose the date range and format (PDF or Excel), then click download.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Is my account secure?</span>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, your account is protected with advanced encryption and security measures. We recommend enabling two-factor authentication for additional security. You can do this from the Profile & Settings page.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How long does an international transfer take?</span>
+                                <span class="faq-arrow">▼</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>International transfers typically take 2-5 business days depending on the destination country and intermediary banks. SWIFT transfers are usually faster than traditional correspondent banking.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Support Form -->
+                <section class="contact-support">
+                    <h3>Still need help? Contact us</h3>
+                    <form class="support-form" onsubmit="handleSupportForm(event)">
+                        <div class="form-group">
+                            <label for="issue-type">Issue Type</label>
+                            <select id="issue-type" required>
+                                <option value="">Select issue type</option>
+                                <option value="technical">Technical Issue</option>
+                                <option value="account">Account Related</option>
+                                <option value="transaction">Transaction Issue</option>
+                                <option value="card">Card Related</option>
+                                <option value="loan">Loan Related</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" placeholder="Enter subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Describe your issue in detail" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="attachment">Attachment (optional)</label>
+                            <input type="file" id="attachment">
+                        </div>
+
+                        <button type="submit" class="btn-primary full-width">Submit Ticket</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BankName</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40">
+                        <polygon points="20,5 35,15 35,25 20,35 5,25 5,15" fill="white"/>
+                    </svg>
+                    <span>BankName</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="dashboard.html" class="menu-item active" data-page="dashboard">
+                    <span class="menu-icon">🏠</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="accounts.html" class="menu-item" data-page="accounts">
+                    <span class="menu-icon">👤</span>
+                    <span>Accounts</span>
+                </a>
+                <a href="transactions.html" class="menu-item" data-page="transactions">
+                    <span class="menu-icon">✓</span>
+                    <span>Transactions</span>
+                </a>
+                <a href="transfer.html" class="menu-item" data-page="transfer">
+                    <span class="menu-icon">→</span>
+                    <span>Transfer Money</span>
+                </a>
+                <a href="cards.html" class="menu-item" data-page="cards">
+                    <span class="menu-icon">💳</span>
+                    <span>Cards</span>
+                </a>
+                <a href="loans.html" class="menu-item" data-page="loans">
+                    <span class="menu-icon">📋</span>
+                    <span>Loans</span>
+                </a>
+                <a href="profile.html" class="menu-item" data-page="profile">
+                    <span class="menu-icon">👥</span>
+                    <span>Profile</span>
+                </a>
+                <a href="support.html" class="menu-item" data-page="support">
+                    <span class="menu-icon">❓</span>
+                    <span>Support</span>
+                </a>
+                <a href="#" class="menu-item" onclick="handleLogout()">
+                    <span class="menu-icon">🚪</span>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="header-icons">
+                        <button class="icon-btn" title="Notifications">🔔</button>
+                        <button class="icon-btn" title="Messages">✓</button>
+                        <button class="icon-btn" title="Settings">⚙️</button>
+                        <button class="icon-btn" title="Calendar">📅</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-wrapper">
+                <!-- Welcome Section -->
+                <section class="welcome-section">
+                    <div class="welcome-card">
+                        <h2>Welcome Back, John Doe!</h2>
+                        <p>Here's your account summary</p>
+                    </div>
+                </section>
+
+                <!-- Accounts Overview -->
+                <section class="accounts-overview">
+                    <h3>Your Accounts</h3>
+                    <div class="accounts-grid">
+                        <div class="account-card">
+                            <div class="account-header">
+                                <span class="account-type">Savings Account</span>
+                                <span class="account-number">****4321</span>
+                            </div>
+                            <div class="account-balance">
+                                <p>Total Balance</p>
+                                <h2>$12,850.75</h2>
+                            </div>
+                            <div class="account-footer">
+                                <button class="btn-small" onclick="navigateTo('accounts.html')">View Details</button>
+                            </div>
+                        </div>
+
+                        <div class="account-card">
+                            <div class="account-header">
+                                <span class="account-type">Current Account</span>
+                                <span class="account-number">****5678</span>
+                            </div>
+                            <div class="account-balance">
+                                <p>Total Balance</p>
+                                <h2>$8,420.50</h2>
+                            </div>
+                            <div class="account-footer">
+                                <button class="btn-small" onclick="navigateTo('accounts.html')">View Details</button>
+                            </div>
+                        </div>
+
+                        <div class="account-card">
+                            <div class="account-header">
+                                <span class="account-type">Investment Account</span>
+                                <span class="account-number">****9012</span>
+                            </div>
+                            <div class="account-balance">
+                                <p>Total Balance</p>
+                                <h2>$25,300.00</h2>
+                            </div>
+                            <div class="account-footer">
+                                <button class="btn-small" onclick="navigateTo('accounts.html')">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Transactions -->
+                <section class="recent-transactions">
+                    <div class="section-header">
+                        <h3>Recent Transactions</h3>
+                        <a href="transactions.html" class="view-all">View All →</a>
+                    </div>
+                    <div class="transactions-list">
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <span class="transaction-icon">🛍️</span>
+                                <div class="transaction-details">
+                                    <p class="transaction-name">Shopping</p>
+                                    <p class="transaction-date">Apr 23, 2024</p>
+                                </div>
+                            </div>
+                            <span class="transaction-amount negative">-$150.00</span>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <span class="transaction-icon">✓</span>
+                                <div class="transaction-details">
+                                    <p class="transaction-name">Salary Credit</p>
+                                    <p class="transaction-date">Apr 20, 2024</p>
+                                </div>
+                            </div>
+                            <span class="transaction-amount positive">+$2,500.00</span>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <span class="transaction-icon">🏠</span>
+                                <div class="transaction-details">
+                                    <p class="transaction-name">Rent Payment</p>
+                                    <p class="transaction-date">Apr 15, 2024</p>
+                                </div>
+                            </div>
+                            <span class="transaction-amount negative">-$1,000.00</span>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <span class="transaction-icon">📋</span>
+                                <div class="transaction-details">
+                                    <p class="transaction-name">EMI Payment</p>
+                                    <p class="transaction-date">Apr 10, 2024</p>
+                                </div>
+                            </div>
+                            <span class="transaction-amount negative">-$320.00</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Actions -->
+                <section class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="actions-grid">
+                        <button class="action-card" onclick="navigateTo('transfer.html')">
+                            <span class="action-icon">➤</span>
+                            <span>Transfer Money</span>
+                        </button>
+                        <button class="action-card" onclick="navigateTo('cards.html')">
+                            <span class="action-icon">💳</span>
+                            <span>Manage Cards</span>
+                        </button>
+                        <button class="action-card" onclick="navigateTo('loans.html')">
+                            <span class="action-icon">📋</span>
+                            <span>View Loans</span>
+                        </button>
+                        <button class="action-card" onclick="navigateTo('profile.html')">
+                            <span class="action-icon">⚙️</span>
+                            <span>Settings</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

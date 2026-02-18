@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loans - BankName</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40">
+                        <polygon points="20,5 35,15 35,25 20,35 5,25 5,15" fill="white"/>
+                    </svg>
+                    <span>BankName</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="dashboard.html" class="menu-item" data-page="dashboard">
+                    <span class="menu-icon">🏠</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="accounts.html" class="menu-item" data-page="accounts">
+                    <span class="menu-icon">👤</span>
+                    <span>Accounts</span>
+                </a>
+                <a href="transactions.html" class="menu-item" data-page="transactions">
+                    <span class="menu-icon">✓</span>
+                    <span>Transactions</span>
+                </a>
+                <a href="transfer.html" class="menu-item" data-page="transfer">
+                    <span class="menu-icon">→</span>
+                    <span>Transfer Money</span>
+                </a>
+                <a href="cards.html" class="menu-item" data-page="cards">
+                    <span class="menu-icon">💳</span>
+                    <span>Cards</span>
+                </a>
+                <a href="loans.html" class="menu-item active" data-page="loans">
+                    <span class="menu-icon">📋</span>
+                    <span>Loans</span>
+                </a>
+                <a href="profile.html" class="menu-item" data-page="profile">
+                    <span class="menu-icon">👥</span>
+                    <span>Profile</span>
+                </a>
+                <a href="support.html" class="menu-item" data-page="support">
+                    <span class="menu-icon">❓</span>
+                    <span>Support</span>
+                </a>
+                <a href="#" class="menu-item" onclick="handleLogout()">
+                    <span class="menu-icon">🚪</span>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Loans</h1>
+                </div>
+                <div class="header-right">
+                    <div class="header-icons">
+                        <button class="icon-btn" title="Notifications">🔔</button>
+                        <button class="icon-btn" title="Messages">✓</button>
+                        <button class="icon-btn" title="Settings">⚙️</button>
+                        <button class="icon-btn" title="Calendar">📅</button>
+                    </div>
+                    <button class="btn-primary" onclick="handleApplyLoan()">Apply for Loan</button>
+                </div>
+            </header>
+
+            <!-- Loans Content -->
+            <div class="content-wrapper">
+                <!-- Active Loans -->
+                <section class="loans-section">
+                    <h3>Active Loans</h3>
+                    <div class="loans-grid">
+                        <div class="loan-card">
+                            <div class="loan-header">
+                                <h4>Personal Loan</h4>
+                                <span class="loan-status active">Active</span>
+                            </div>
+                            <div class="loan-details">
+                                <div class="detail-row">
+                                    <span class="label">Loan Amount:</span>
+                                    <span class="value">$50,000.00</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Outstanding Amount:</span>
+                                    <span class="value">$35,250.00</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Interest Rate:</span>
+                                    <span class="value">8.5% p.a.</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Monthly EMI:</span>
+                                    <span class="value">$1,200.00</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Next Due Date:</span>
+                                    <span class="value">May 5, 2024</span>
+                                </div>
+                            </div>
+                            <div class="loan-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 70%"></div>
+                                </div>
+                                <p class="progress-text">70% Repaid</p>
+                            </div>
+                            <div class="loan-actions">
+                                <button class="btn-secondary" onclick="handlePayEMI()">Pay EMI</button>
+                                <button class="btn-secondary" onclick="handleLoanDetails()">View Details</button>
+                            </div>
+                        </div>
+
+                        <div class="loan-card">
+                            <div class="loan-header">
+                                <h4>Home Loan</h4>
+                                <span class="loan-status active">Active</span>
+                            </div>
+                            <div class="loan-details">
+                                <div class="detail-row">
+                                    <span class="label">Loan Amount:</span>
+                                    <span class="value">$250,000.00</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Outstanding Amount:</span>
+                                    <span class="value">$180,500.00</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Interest Rate:</span>
+                                    <span class="value">6.5% p.a.</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Monthly EMI:</span>
+                                    <span class="value">$2,850.00</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="label">Next Due Date:</span>
+                                    <span class="value">May 1, 2024</span>
+                                </div>
+                            </div>
+                            <div class="loan-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 28%"></div>
+                                </div>
+                                <p class="progress-text">28% Repaid</p>
+                            </div>
+                            <div class="loan-actions">
+                                <button class="btn-secondary" onclick="handlePayEMI()">Pay EMI</button>
+                                <button class="btn-secondary" onclick="handleLoanDetails()">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Loan Summary -->
+                <section class="loan-summary">
+                    <h3>Loan Summary</h3>
+                    <div class="summary-grid">
+                        <div class="summary-card">
+                            <span class="summary-label">Total Loans</span>
+                            <span class="summary-value">2</span>
+                        </div>
+                        <div class="summary-card">
+                            <span class="summary-label">Total Outstanding</span>
+                            <span class="summary-value">$215,750.00</span>
+                        </div>
+                        <div class="summary-card">
+                            <span class="summary-label">Total Monthly EMI</span>
+                            <span class="summary-value">$4,050.00</span>
+                        </div>
+                        <div class="summary-card">
+                            <span class="summary-label">Average Interest Rate</span>
+                            <span class="summary-value">7.5% p.a.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Apply for New Loan -->
+                <section class="apply-loan-section">
+                    <h3>Want to apply for a new loan?</h3>
+                    <p>Check your eligibility and apply for various loan products</p>
+                    <button class="btn-primary" onclick="handleApplyLoan()">Apply for New Loan</button>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

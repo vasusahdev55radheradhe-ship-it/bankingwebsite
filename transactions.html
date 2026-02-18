@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - BankName</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40">
+                        <polygon points="20,5 35,15 35,25 20,35 5,25 5,15" fill="white"/>
+                    </svg>
+                    <span>BankName</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="dashboard.html" class="menu-item" data-page="dashboard">
+                    <span class="menu-icon">🏠</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="accounts.html" class="menu-item" data-page="accounts">
+                    <span class="menu-icon">👤</span>
+                    <span>Accounts</span>
+                </a>
+                <a href="transactions.html" class="menu-item active" data-page="transactions">
+                    <span class="menu-icon">✓</span>
+                    <span>Transactions</span>
+                </a>
+                <a href="transfer.html" class="menu-item" data-page="transfer">
+                    <span class="menu-icon">→</span>
+                    <span>Transfer Money</span>
+                </a>
+                <a href="cards.html" class="menu-item" data-page="cards">
+                    <span class="menu-icon">💳</span>
+                    <span>Cards</span>
+                </a>
+                <a href="loans.html" class="menu-item" data-page="loans">
+                    <span class="menu-icon">📋</span>
+                    <span>Loans</span>
+                </a>
+                <a href="profile.html" class="menu-item" data-page="profile">
+                    <span class="menu-icon">👥</span>
+                    <span>Profile</span>
+                </a>
+                <a href="support.html" class="menu-item" data-page="support">
+                    <span class="menu-icon">❓</span>
+                    <span>Support</span>
+                </a>
+                <a href="#" class="menu-item" onclick="handleLogout()">
+                    <span class="menu-icon">🚪</span>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Transactions</h1>
+                </div>
+                <div class="header-right">
+                    <div class="header-icons">
+                        <button class="icon-btn" title="Notifications">🔔</button>
+                        <button class="icon-btn" title="Messages">✓</button>
+                        <button class="icon-btn" title="Settings">⚙️</button>
+                        <button class="icon-btn" title="Calendar">📅</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Transactions Content -->
+            <div class="content-wrapper">
+                <!-- Filters -->
+                <section class="transactions-filters">
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option>Date Range</option>
+                            <option>Last 7 Days</option>
+                            <option>Last 30 Days</option>
+                            <option>Last 3 Months</option>
+                            <option>Custom</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option>Credit / Debit</option>
+                            <option>All</option>
+                            <option>Credit</option>
+                            <option>Debit</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option>Amount - .00</option>
+                            <option>Less than $100</option>
+                            <option>$100 - $500</option>
+                            <option>$500 - $1000</option>
+                            <option>More than $1000</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <input type="text" class="search-input" placeholder="Search...">
+                        <button class="search-btn">🔍</button>
+                    </div>
+
+                    <div class="export-buttons">
+                        <button class="btn-export">📄 Pedi</button>
+                        <button class="btn-export primary">📊 CSV</button>
+                    </div>
+                </section>
+
+                <!-- Transactions Table -->
+                <section class="transactions-table-section">
+                    <table class="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>Date ↕</th>
+                                <th>Description</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Apr 23, 2024</td>
+                                <td>Shopping</td>
+                                <td>$150.00</td>
+                                <td class="empty">$ **</td>
+                                <td>$8,9***.00</td>
+                            </tr>
+                            <tr>
+                                <td>Apr 20, 2024</td>
+                                <td>Salary Credit</td>
+                                <td class="empty">$2,500.00</td>
+                                <td>$2,500.00</td>
+                                <td>$11,4***.00</td>
+                            </tr>
+                            <tr>
+                                <td>Apr 15, 2024</td>
+                                <td>Rent Payment</td>
+                                <td>$1,000.00</td>
+                                <td class="empty">$1,000.00</td>
+                                <td>$8,9***.00</td>
+                            </tr>
+                            <tr>
+                                <td>Apr 10, 2024</td>
+                                <td>EMI Payment</td>
+                                <td>$320.00</td>
+                                <td>$120.00</td>
+                                <td>$9,2***.00</td>
+                            </tr>
+                            <tr>
+                                <td>Apr 5, 2024</td>
+                                <td>Bill Payment</td>
+                                <td>$75.00</td>
+                                <td>$75.00</td>
+                                <td>$9,0***.00</td>
+                            </tr>
+                            <tr>
+                                <td>Apr 2, 2024</td>
+                                <td>Refund</td>
+                                <td>$0.00</td>
+                                <td>$0.00</td>
+                                <td>$10,0***.00</td>
+                            </tr>
+                            <tr>
+                                <td>Mar 28, 2024</td>
+                                <td>Grocery Purchase</td>
+                                <td>$85.50</td>
+                                <td class="empty">--</td>
+                                <td>$10,1***.00</td>
+                            </tr>
+                            <tr>
+                                <td>Mar 25, 2024</td>
+                                <td>Insurance Premium</td>
+                                <td>$250.00</td>
+                                <td class="empty">--</td>
+                                <td>$10,2***.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Pagination -->
+                <section class="pagination">
+                    <button class="btn-pagination">← Previous</button>
+                    <span class="pagination-info">Page 1 of 5</span>
+                    <button class="btn-pagination">Next →</button>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
