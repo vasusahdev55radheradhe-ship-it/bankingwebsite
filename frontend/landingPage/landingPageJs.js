@@ -1,7 +1,5 @@
 // Handle Login Button Click
-// document.getElementById('loginBtn').addEventListener('click', ()=>{
-//     window.location.href = '../login.html';
-// });
+
 document.querySelectorAll('.login-btn').forEach(button => {
     button.addEventListener('click', () => {
         console.log('Login button clicked');
@@ -9,17 +7,19 @@ document.querySelectorAll('.login-btn').forEach(button => {
     });
 });
 
-    // alert('Login functionality - Navigate to login page or show login modal');
-    // You can replace with actual navigation or modal logic
-    // window.location.href = 'login.html';
-
 // Handle Open Account Button Click
-function handleOpenAccount() {
-    console.log('Open Account button clicked');
-    alert('Open Account functionality - Navigate to account creation page or show account creation modal');
-    // You can replace with actual navigation or modal logic
-    // window.location.href = 'open-account.html';
-}
+document.querySelectorAll('.open-account-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        console.log('Open Account button clicked');
+        window.location.href = '../loginPage/openAccount.html';
+    });
+});
+// function handleOpenAccount() {
+//     console.log('Open Account button clicked');
+//     alert('Open Account functionality - Navigate to account creation page or show account creation modal');
+//     // You can replace with actual navigation or modal logic
+//     // window.location.href = 'open-account.html';
+// }
 
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

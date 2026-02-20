@@ -136,3 +136,21 @@
 .login-footer a:hover {
     text-decoration: underline;
 }
+
+
+
+/* Extra spacing for long forms */
+.login-form {
+    max-height: 100%;
+    /* overflow-y: auto; */
+    padding-right: 5px;
+}
+
+/* Optional scrollbar styling */
+.login-form::-webkit-scrollbar {
+    width: 6px;
+}
+.login-form::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 6px;
+}
