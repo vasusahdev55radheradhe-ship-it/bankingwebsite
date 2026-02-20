@@ -1,4 +1,4 @@
-## <b>This project in devlopment</b>
+## <b>This project is in devlopment</b>
 ## Overview
 A full-stack banking website built as a college project, featuring user authentication, account management, and transaction processing.
 
