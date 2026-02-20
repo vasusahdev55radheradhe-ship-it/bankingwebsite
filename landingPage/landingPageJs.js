@@ -5,7 +5,7 @@
 document.querySelectorAll('.login-btn').forEach(button => {
     button.addEventListener('click', () => {
         console.log('Login button clicked');
-        window.location.href = '../login.html';
+        window.location.href = '../loginPage/login.html';
     });
 });
 
